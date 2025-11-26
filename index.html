@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/mystyle.css">
+        <link rel="stylesheet" href="../css/mystyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -111,71 +111,275 @@
 
 </section>
         
-        
-        <section class="menu-section">
-  <h2 class="menu-title">October Menus</h2>
-            <p>Click on the tabs below to view the menu</p> 
-            
-  <div class="menu-grid">
-    <div class="menu-column">
-      <h3 class="column-title">Classico</h3>
-      <ul class="menu-list">
-        <li>
-          <span class="item-name">Espresso</span>
-          <span class="item-price">$6</span>
-        </li>
-        <li>
-          <span class="item-name">Espresso Macchiato</span>
-          <span class="item-price">$6</span>    
-        </li>
-           <li>
-          <span class="item-name">Americano</span>
-          <span class="item-price">$6</span>    
-        </li>
-           <li>
-          <span class="item-name">Lavazza House Drip Coffee</span>
-          <span class="item-price">$6</span>    
-        </li>
-          
-          
-        <!-- More menu items -->
-      </ul>
-    </div>
-    <div class="menu-column">
-      <h3 class="column-title">Specials</h3>
-      <ul class="menu-list">
-        <li>
-          <span class="item-name">Latte</span>
-          <span class="item-price">$5</span>
-        </li>
-        <li>
-          <span class="item-name">Cappuccino</span>
-          <span class="item-price">$5</span>
-        </li>
-        <!-- More menu items -->
-      </ul>
-    </div>
+<!-- MENU SECTION -->
+                
+<script>
+$(document).ready(function() {
+
+  $(".tab-link").click(function() {
+
+    // remove old active tabs
+    $(".tab-link").removeClass("active");
+    $(".menu-panel").removeClass("active").hide();
+
+    // activate clicked tab
+    $(this).addClass("active");
+
+    // show correct menu
+    let panel = $(this).data("target");
+    $(panel).fadeIn(200).addClass("active");
+  });
+
+});
+</script>
+                
+<section class="menu-tabs">
+
+  <h2>October Menus</h2>
+  <p class="subtitle">Click on the tabs below to view the menu</p>
+
+  <!-- TAB BUTTONS -->
+  <div class="menu-nav">
+    <span class="tab-link active" data-target="#coffee">COFFEE</span>
+    <span class="tab-link" data-target="#breakfast">BREAKFAST</span>
+    <span class="tab-link" data-target="#lunch">LUNCH</span>
   </div>
-</section>
-        
-        <section class="subscribe text-center py-5">
-    <h4>Subscribe</h4>
-    <p>Sign up with your email address to receive weekly news<br>updates and priority ordering on Holiday Specials!</p>
 
-    <form class="form-inline justify-content-center mt-3">
-        <input type="email" class="form-control mb-2 mr-2" placeholder="Email Address">
-        <button class="btn sign-btn mb-2">SIGN UP</button>
-    </form>
+  <!-- COFFEE MENU -->
+  <div id="coffee" class="menu-panel active">
+    <h2 class="sub-title">Classico</h2>
 
-    <small>We respect your privacy. We never spam. Opt out at any time.</small>
-</section>
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Espresso</span><span>$3.45</span></li>
+                <li><span>Espresso Macchiato</span><span>$6</span></li>
+                <li><span>Americano</span><span>$3.50</span></li>
+                <li><span>Lavazza House Drip</span><span>$3.75</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>Latte</span><span>$6.55</span></li>
+                <li><span>Cappuccino</span><span>$6.55</span></li>
+                <li><span>Nutella Hot Chocolate</span><span>$5</span></li>
+                <li><span>Chai Latte</span><span>$6.75</span></li>
+            </ul>
+        </div>
+
+        <h2 class="sub-title">Specials</h2>
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Honey Latte</span><span>$6</span></li>
+                <li><span>Lavender White Mocha</span><span>$6</span></li>
+                <li><span>Irish Cream Latte</span><span>$7.15</span></li>
+                <li><span>Mocha Coconut</span><span>$6.75</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>London Fog Tea</span><span>$6.75</span></li>
+                <li><span>Rose Cappuccino</span><span>$6.75</span></li>
+                <li><span>Matcha</span><span>$6.45</span></li>
+                <li><span>Cold Brew</span><span>$7.45</span></li>
+            </ul>
+        </div>
+      </div>
+      
+    
+   
+    
+  <!-- BREAKFAST MENU -->
+  <div id="breakfast" class="menu-panel">
+<h2 class="sub-title">Croissants</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Plain Croissant</span><span>$3.45</span></li>
+                <li><span>Chocolate Croissant</span><span>$6</span></li>
+                <li><span>Ham & Cheese</span><span>$3.50</span></li>
+                 
+            </ul>
+            <ul class="menu-list">
+                <li><span>Egg & Cheese</span><span>$3.50</span></li>
+                <li><span>Egg , Bacon & Cheese</span><span>$6.55</span></li>
+                <li><span>Egg , Sausage & Cheese</span><span>$6.55</span></li>
+                
+            </ul>
+        </div>
+
+        <h2 class="sub-title">Bagel Sandwiches</h2>
+        <div class="menu-row">
+            <ul class="menu-list">
+                 <li><span>Bagel</span><span>$6</span></li>
+                <li><span>Ham & Cheese</span><span>$6</span></li>
+             
+            
+            </ul>
+            <ul class="menu-list">
+              <li><span>Egg, Avocado, Spinach & Pesto</span><span>$6</span></li>
+               <li><span>Egg & Cheese</span><span>$6</span></li>  
+            </ul>
+        </div>
+    
+      <h2 class="sub-title">Toast</h2>
+        <div class="menu-row">
+            <ul class="menu-list">
+                 <li><span>Avocado/Smoked Salmon Toast</span><span>$6</span></li>
+                <li><span>Strawberry Ricotta Avocado Toast</span><span>$6</span></li>
+                 <li><span>Lox & Cream Cheese Toas</span><span>$6</span></li>
+               <li><span>Simply Avocado Toast</span><span>$6</span></li>
+             
+            </ul>
+            <ul class="menu-list">
+             
+                   <li><span>Avocado Garden Toast</span><span>$6</span></li>
+                    <li><span>“Roma” Avocado Toast</span><span>$6</span></li>
+                    <li><span>Caprese Toast</span><span>$6</span></li>
+            </ul>
+        </div>
+    
+      
+  </div>
+
+    
+    
+  <!-- LUNCH MENU -->
+  <div id="lunch" class="menu-panel">
+  
+             <h2 class="sub-title">Panini</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Turkey</span><span>$20.75</span></li>
+                <li><span>Ham & Cheese</span><span>$19.35</span></li>
+                <li><span>Roma</span><span>$21.40</span></li>
+                <li><span>Veggie</span><span>$17.95</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>Italian</span><span>$21.40</span></li>
+                <li><span>Pesto Chicken</span><span>$20.75</span></li>
+                <li><span>Smoke Lox</span><span>$23.50</span></li>
+                <li><span>BBQ Chicken</span><span>$21.40</span></li>
+            </ul>
+        </div>
+
+             <h2 class="sub-title">Salad</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>House Salad</span><span>$20.75</span></li>
+                <li><span>Caeser Salad</span><span>$19.35</span></li>
+                <li><span>Spinach Salad</span><span>$21.40</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>Strawberry Prosciutto</span><span>$20.75</span></li>
+                <li><span>Caprese Salad</span><span>$19.35</span></li>
+                <li><span>Keto Salad</span><span>$17.95</span></li>
+            </ul>
+        </div>
+
+             <h2 class="sub-title">Pasta</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Lasagna Bolognese</span><span>$17.95</span></li>
+                
+            </ul>
+            <ul class="menu-list">
+                <li><span>Cheese Ravioli</span><span>$17.95</span></li>
+             
+            </ul>
+        </div>
+
+             <h2 class="sub-title">Flat Bread</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Margherita</span><span>$15.20</span></li>
+                <li><span>BBQ Chicken Ranch</span><span>$17.25</span></li>
+                <li><span>Antipasto</span><span>$19.35</span></li>
+                    <li><span>Chicken Pesto</span><span>$17.25</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>Veggie Lover</span><span>$20.75</span></li>
+                <li><span>Carnivore</span><span>$20.75</span></li>
+                <li><span>Lox</span><span>$21.40</span></li>
+                <li><span>Strawberry Prosciutto</span><span>$18.64</span></li>
+            </ul>
+        </div>
+      </div>
+      
+      
      
+    
+      <!-- hover image zoom in-->
+<div class="card-grid">
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-image">
+        <a href="preorder.html"><img src="images/zoomin1.jpg" alt="Coffee Pre-order"></a>
+    </div>
+    <p class="card-label">CAFFEE PRE-ORDER</p>
+  </div>
 
-         
-   <footer class="text-center py-3">
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-image">
+        <a href="preorder.html"><img src="images/zoomin2.jpeg" alt="Breakfast Pre-order"></a>
+    </div>
+    <p class="card-label">BREAKFAST PRE-ORDER</p>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="card-image">
+        <a href="preorder.html"><img src="images/zoomin3.jpeg" alt="Lunch Pre-order"></a>
+    </div>
+    <p class="card-label">LUNCH PRE-ORDER</p>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="card-image">
+      <a href="preorder.html"><img src="images/zoomin4.png" alt="FAQ"></a>
+    </div>
+    <p class="card-label">FAQ</p>
+  </div>
+</div>
+
+
+    
+
+</section>
+
+ <!-- SUBSCRIBE SECTION -->
+<section class="subscribe-section">
+  <h2>Subscribe</h2>
+  <p class="subscribe-desc">
+    Sign up with your email address to receive weekly news updates and priority ordering on Holiday Specials!
+  </p>
+
+  <form class="subscribe-form">
+    <input type="email" placeholder="Email Address" required />
+    <button type="submit">SIGN UP</button>
+  </form>
+
+  <p class="privacy-note">
+    We respect your privacy. We never spam. Opt out at any time.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-line"></div>
+
+  <div class="footer-logos">
+    <img src="images/LOGO1.png" alt="ROMA Coffee Logo" />
+    <span class="footer-divider"></span>
+    <img src="images/FAQ1.png" alt="Roma Restaurant Cafe Logo" />
+  </div>
+
+  <p class="copyright">
     COPYRIGHT © 2025 ROMA COFFEE - All Rights Reserved.
-</footer>    
-        
+  </p>
+</footer>
+
         
         
         
