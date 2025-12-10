@@ -988,3 +988,51 @@ footer {
   }
 }
 
+/* ===== Mobile Fixes ===== */
+@media (max-width: 768px) {
+
+  /* Stack sections vertically */
+  .about-block,
+  .image-text,
+  .menu-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Fix overflowing images */
+  .about-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Remove forced text width */
+  .about-block p {
+    width: 100%;
+  }
+
+  /* Remove huge desktop spacing */
+  .about-block {
+    gap: 20px;
+  }
+
+  /* Stop floated images from breaking layout */
+  img {
+    float: none !important;
+  }
+
+  /* Center captions cleanly */
+  figure {
+    max-width: 100%;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+
+  /* Navigation stack */
+  .nav-bar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
