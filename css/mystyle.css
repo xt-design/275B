@@ -1,5 +1,11 @@
 /* My Custom CSS */
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 /* Row 1 logo centered */
 .logo-row {
@@ -63,17 +69,21 @@
 
 .nav-bar a {
   text-decoration: none;
-  color: black;
+  color: red;
+    font-weight: bold;
   font-size: 15px;
 }
 
 .nav-bar a.active {
   color: red;
   font-weight: bold;
+    text-decoration: underline;
 }
 
+
+
 /* --- Responsive --- */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .header-top {
     flex-direction: column;
     gap: 10px;
@@ -925,4 +935,56 @@ footer {
   }
 }
 
+/* ===== MOBILE RESPONSIVE FIXES WITHOUT CHANGING DESKTOP ===== */
+@media (max-width: 768px) {
+
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-row {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .nav-bar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .welcome-section {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .menu-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;   /* 1 card per row only on mobile */
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-label {
+    width: 100%;
+  }
+
+  .footer-line {
+    width: 90%;
+  }
+
+  .footer-logos {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 
