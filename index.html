@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lan="en">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/mystyle.css">
+        <link rel="stylesheet" href="../css/mystyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
                
+        
+     
+
+        
     </head>
     
      <!-- HEADER -->
@@ -46,7 +50,16 @@
 
          <!-- Navigation -->
         
-            <nav class="nav-bar">
+        <!-- Hamburger Button -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="nav-bar" id="navMenu">
+
+        
                 <div class="line"></div>
     <ul>
         
@@ -68,7 +81,11 @@
         
         
             <body>
-        
+   
+               
+
+                
+                
 <!-- Start WOWSlider.com HEAD section -->
 <link rel="stylesheet" type="text/css" href="engine1/style.css" />
 <script type="text/javascript" src="engine1/jquery.js"></script>
@@ -333,7 +350,7 @@ $(document).ready(function() {
   <!-- Card 4 -->
   <div class="card">
     <div class="card-image">
-      <a href="preorder.html"><img src="images/zoomin4.png" alt="FAQ"></a>
+      <a href="faq.html"><img src="images/zoomin4.png" alt="FAQ"></a>
     </div>
     <p class="card-label">FAQ</p>
   </div>
@@ -377,7 +394,16 @@ $(document).ready(function() {
 </footer>
 
         
-        
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+
+  hamburger.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+  });
+});
+</script>      
         
     </body>
     
